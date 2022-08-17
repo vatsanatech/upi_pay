@@ -34,16 +34,21 @@ class ApplicationMeta {
   /// On Android, it creates an [Image] widget from the byte-array of the logo.
   /// On iOS, it creates an [Image] widget from logo stored as part of assets.
   Image iconImage(double dimension) {
-    if (io.Platform.isAndroid) {
-      return Image.memory(_icon!, width: dimension, height: dimension);
-    } else if (io.Platform.isIOS) {
-      return Image.asset(
-        'assets/apps/ios/${upiApplication.iosBundleId}.png',
-        package: 'upi_pay',
+    // if (io.Platform.isAndroid) {
+    //   return Image.memory(_icon!, width: dimension, height: dimension);
+    // } else if (io.Platform.isIOS) {
+      // return Image.asset(
+      //   'assets/apps/ios/${upiApplication.iosBundleId}.png',
+      //   package: 'upi_pay',
+      //   width: dimension,
+      //   height: dimension,
+      // );
+      return Image.network(
+        'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png',
         width: dimension,
         height: dimension,
       );
-    }
+    // }
     throw UnsupportedError('`iconImage` is available on Android and iOS only');
   }
 
