@@ -26,5 +26,5 @@ flutter:
         pluginClass: UpiPayPlugin
       ios:
         pluginClass: UpiPayPlugin
-  assets:
-    - assets/apps/ios/
+  # assets:
+  #   - assets/apps/ios/
